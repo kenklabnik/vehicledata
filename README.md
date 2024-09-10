@@ -4,6 +4,7 @@ This project performs some very basic exploratory analysis on a set of vehicle l
 # If you want to launch locally
 
 - Ensure Python 3.11 is installed (this project was made with 3.11, but later versions should also work), along with `pip` 
-- Acquire Streamlit, Pandas, and Plotly express:
+- Ensure you have Streamlit, Pandas, and Plotly express:
     - Open the command line and run `pip install streamlit`, `pip install pandas`, and `pip install plotly.express` respectively
-- Clone this repository
+- Clone this repository to your local machine
+- In the root folder of the repository, run `streamlit run app.py`
