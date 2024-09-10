@@ -11,7 +11,7 @@ df_cut = df[(df['price'] < 100000)].copy() #avoid SettingWithCopy warning later
 
 outlier_disclaimer = ' (priced under $100k)'
 
-fig_hist = px.histogram(data_frame=df['price'], nbins=200,
+fig_hist = px.histogram(data_frame=df['price'], nbins=400,
              width=900, title='Price Distribution' + outlier_disclaimer,
              labels={
                  'value': 'Price (USD)',
@@ -39,7 +39,7 @@ st.title('Options')
 hide_outliers = st.checkbox('Hide Cars Above $100,000 Asking Price', value=False)
 
 if hide_outliers:
-    fig_hist.data[0].update(x=df_cut['price'])
+    fig_hist.data[0].update(x=df_cut['price'], nbinsx=100) #keeps bin size constant between modes
     fig_year.data[0].update(x=df_cut['model_year'], y=df_cut['price'])
     fig_cond.data[0].update(x=df_cut['condition'], y=df_cut['price'])
 
